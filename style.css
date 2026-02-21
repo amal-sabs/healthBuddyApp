@@ -1,0 +1,256 @@
+:root {
+  --dark: #002126;
+  --primary: #477177;
+  --secondary: #87AEB4;
+  --accent: #DED07F;
+  --white: #ffffff;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; }
+body { background:var(--white); color:var(--dark); scroll-behavior:smooth; }
+
+header {
+  position:fixed; top:0; width:100%; background:var(--dark); color:white;
+  padding:20px 40px; display:flex; justify-content:space-between; align-items:center; z-index:1000;
+}
+header h1 { font-weight:700; }
+nav { display:flex; gap:20px; }
+nav a { color:white; text-decoration:none; font-weight:500; transition:0.3s; }
+nav a.active, nav a:hover { color:var(--accent); font-weight:700; }
+.menu-toggle { display:none; flex-direction:column; cursor:pointer; }
+.menu-toggle span { height:3px; width:25px; background:white; margin:4px 0; }
+@media (max-width:768px){ nav { position:absolute; top:80px; right:0; background:var(--dark); flex-direction:column; width:100%; display:none; text-align:center; } nav.active { display:flex; } .menu-toggle { display:flex; } }
+
+.section { min-height:100vh; padding:120px 10%; display:flex; flex-direction:column; justify-content:flex-start; border-left:6px solid var(--primary); position:relative; }
+.section:nth-child(even){ background:var(--secondary); }
+.section::before { content:''; position:absolute; left:-13px; top:50%; width:20px; height:20px; background:var(--accent); border-radius:50%; }
+.phase-title { font-size:3rem; font-weight:900; margin-bottom:40px; }
+.subsection { margin-bottom:40px; }
+.subsection h3 { font-size:1.5rem; font-weight:700; margin-bottom:10px; }
+.subsection p { font-weight:300; max-width:700px; line-height:1.6; }
+.fade-in { opacity:0; transform:translateY(30px); transition:0.8s; }
+.fade-in.visible { opacity:1; transform:translateY(0); }
+.timeline { position:fixed; left:20px; top:100px; height:80%; width:4px; background:var(--primary); }
+
+/* Overlay background */
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;  /* hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  cursor: zoom-out;
+}
+
+.image-overlay.active {
+  display: flex;
+}
+
+/* Zoomed image */
+.image-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.image-overlay img.overlay-image-white-bg {
+  background: var(--white);
+  padding: 12px;
+  border-radius: 10px;
+}
+
+.zoomable {
+  cursor: zoom-in;
+}
+
+.zoomable-card {
+  background: var(--white);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.subsection p.storyboard-text {
+  max-width: none;
+  width: 100%;
+  column-count: 1;
+}
+
+.storyboard-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 12px;
+}
+
+.prototype-gif {
+  max-width: 250px;
+  height: auto;
+}
+
+.prototype-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.prototype-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.prototype-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  cursor: zoom-in;
+}
+
+.feedback-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin: 30px 0;
+}
+
+.feedback-image {
+  position: relative;
+}
+
+.feedback-image img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.feedback-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feedback-item {
+  padding: 15px;
+  background: rgba(135, 174, 180, 0.1);
+  border-left: 4px solid var(--primary);
+  border-radius: 5px;
+}
+
+.feedback-item p {
+  max-width: none;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .feedback-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Container: flex with vertical centering */
+.intro-container {
+  display: flex;
+  align-items: center; /* vertically centers the logo relative to text */
+  justify-content: space-between; /* text left, logo right */
+  gap: 20px;
+  flex-wrap: wrap; /* wraps on small screens */
+}
+
+.intro-text {
+  max-width: 50%;
+}
+
+.intro-logo {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Mobile stacking */
+@media (max-width: 768px) {
+  .intro-container {
+    flex-direction: column;
+    align-items: center; /* center both text and logo */
+    text-align: center;
+  }
+  .intro-logo {
+    width: 150px;
+    margin-top: 20px; /* spacing from text */
+  }
+}
+
+.research-container {
+  display: flex;
+  justify-content: space-between; /* space fills width */
+  gap: 40px;
+  flex-wrap: wrap; /* allows responsive stacking */
+}
+
+.research-text{
+  flex: 1 1 45%;
+  column-count: 2;        /* number of columns */
+  column-gap: 40px;       /* space between columns */
+  column-rule: 1px solid var(--secondary); /* optional dividing line */
+  line-height: 1.7;       /* improve readability */
+  margin: 10;
+}
+
+@media (max-width: 768px) {
+  .research-container {
+    flex-direction: column;
+  }
+  .research-text {
+    flex: 1 1 100%;
+  }
+}
+
+/* Personas subsection: two columns */
+.personas-container {
+    display: flex;
+    gap: 40px;           /* space between columns */
+    flex-wrap: wrap;      /* stack columns if screen too small */
+}
+
+.persona-column {
+    flex: 1 1 45%;       /* roughly half width */
+    min-width: 300px;    /* ensures readability on small screens */
+}
+
+.persona-column img {
+    width: 100%;          /* scale image to column width */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Mobile stacking */
+@media (max-width: 768px) {
+    .personas-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .persona-column {
+        flex: 1 1 100%;
+    }
+}

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HealthBuddy App</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <header>
+        <h1>HealthBuddy App</h1>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span><span></span><span></span>
+        </div>
+        <nav id="nav">
+            <a href="#intro">Introduction</a>
+            <a href="#research">Research</a>
+            <a href="#design">Design</a>
+            <a href="#testing">Testing</a>
+            <a href="#reflection">Reflection</a>
+        </nav>
+        </header>
+
+        <div class="timeline"></div>
+        <!-- INTRO -->
+        <section id="intro" class="section fade-in">
+        <div class="phase-title">Introduction</div>
+        <div class="subsection">
+            <div class="intro-container">
+                <div class="intro-text">
+                    <h3>A UX Case Study on improving adherence and care coordination</h3>
+                    <p>
+                        Chronic health conditions require patients to manage medications, monitor symptoms, and attend regular appointments. 
+                        These routines can be difficult due to busy schedules, forgetfulness, or complex instructions. 
+                        Caregivers often help coordinate medications and appointments while balancing their own responsibilities. 
+                        Missing doses or delayed care can cause stress and poorer health outcomes.
+                    </p>
+                    <p>
+                        <br>
+                        Mobile health apps can support patients and caregivers, but many are complicated or overwhelming. 
+                        Excessive notifications and poor usability often lead users to abandon them. 
+                        This project focuses on designing a mobile app with personalized medication reminders, tracking, appointment scheduling, and communication with healthcare professionals. 
+                        The app emphasizes clarity, trust, and simplicity to make health management easier.
+
+                    </p>
+                    <p>
+                        <br>
+                        The UX design process included research, personas, journey mapping, prototyping, and usability testing. Insights from real users guided decisions to improve accessibility and navigation.
+                        The goal is to create an experience that fits naturally into daily life, helping users stay organized and consistent. 
+                        Ultimately, the app aims to make managing health routines simpler, supportive, and empowering.
+                    </p>
+                </div>
+                <img src="images/app logo.png" alt="App Logo" class="intro-logo">
+            </div>
+        </div>
+        </section>
+
+        <!-- RESEARCH -->
+        <section id="research" class="section fade-in">
+        <div class="phase-title">Research</div>
+
+        <div class="subsection">
+            <div class="research-container">
+                <h3>User Research</h3>
+                <div class="research-text">
+                    <p>
+                        The goal of the user research is to understand the needs, challenges, and behaviors of individuals living with chronic health conditions, as well as caregivers who may assist in managing medications and medical appointments.
+                        The research aims to identify common pain points in medication adherence, appointment management, and communication with healthcare professionals. 
+                        The insights described below provide a strong foundation for design priorities for this app.
+                        This research is conducted through the review of academic articles, healthcare studies, and industry insights on medication adherence, mobile health applications, and user behavior. 
+                        Reviewing existing literature ensures that the app design properly aligns with established healthcare and real-world challenges. 
+                        Articles discussing challenges faced by individuals with chronic illnesses would provide industry and medical context. 
+                        This research helps validate the needs of the users. 
+                        <br><br>
+                        From the research, it is found that mobile health applications have been increasing in adoption. 
+                        A recent analysis found a significant rise in health and fitness app usage, particularly after the COVID-19 pandemic, where health tracking and behavior change tools saw higher downloads and user engagement <a href="https://esmed.org/post-pandemic-trends-in-mobile-health-applications/">[1]</a>. 
+                        This trend supports the viability of a medication management app, suggesting the market readiness and receptivity to such a tool. 
+                        However, despite this growth, several barriers continue to limit long-term adoption.
+                        A scoping review of problems and barriers identified usability, integration into daily, technology challenges, data security concerns, and lack of personalization as recurring obstacles <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10221513/">[2]</a>. 
+                        This highlights the importance of designing an app that is easy to use, intuitive and seamlessly fits into users’ routines. 
+                        <br><br>
+                        Medication adherence remains a critical global issue. 
+                        Research shows that 50% of patients with conditions do not follow their medication regimens as prescribed, leading to poorer health outcomes and increased healthcare costs <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3068890/">[3]</a>. 
+                        According to the American Medical Association, patients often do not take prescribed medications for a variety of reasons. 
+                        Medication-taking behavior is complex and multifaceted, because it is highly influenced by patient understanding and regimen complexity <a href="https://www.ama-assn.org/practice-management/ama-steps-forward-program/8-reasons-patients-dont-take-their-medications">[4]</a>. 
+                        Solutions must therefore be multifactorial, combining reminders with clear instructions, educational context, and feedback loops rather than relying on reminders alone. 
+                        The app must be an effective reminder system surrounded by education, transparency, and motivational design. 
+                        <br><br>
+                        Additional studies also show that reminder systems alone are not always effective. 
+                        Research suggests that while reminders can improve short-term adherence, their effectiveness decreases over time if they are not meaningful or well-integrated into users’ routines <a href="https://www.ncbi.nlm.nih.gov/books/NBK260109/">[5]</a>. 
+                        Users may begin to ignore notifications, especially if they are too frequent or poorly timed. 
+                        From a UX perspective, reminder fatigue is a well-documented issue. 
+                        A study published on Medium highlights that users often dismiss or ignore reminders when they become repetitive, intrusive, or lack contextual relevance <a href="https://medium.com/design-bootcamp/do-reminder-apps-ever-remind-you-a-ux-research-study-46cb356a241e">[6]</a>. 
+                        Poorly designed reminders can feel like interruptions rather than helpful support, reducing engagement and long-term usage.
+                        <br><br>
+                        Overall, the research demonstrates that effective medication management solutions must be multifactorial. 
+                        While reminders are essential, they must be supported by clear and simple user interfaces and educational content to improve understanding. 
+                        Therefore, the proposed application must function not only as a reminder system, but as a comprehensive, user-centered health management tool that supports consistency, reduces cognitive load, and builds long-term user trust.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <h3>Personas</h3>
+            <div class="personas-container">
+                <div class="persona-column">
+                    <p>Persona 1: Independent chronic condition manager</p>
+                    <img src="images/persona1-clemence.png" class="zoomable" alt="Independent chronic condition manager">
+                </div>
+                <div class="persona-column">
+                    <p>Persona 2: Caregiver supporting a family member</p>
+                    <img src="images/persona2-paulette.png" class="zoomable" alt="Caregiver supporting a family member">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="subsection">
+            <h3>User Journey Mapping</h3>
+            <div class="personas-container">
+                <div class="persona-column">
+                    <p>Health Care Reminders</p>
+                    <img src="images/reminder-journey.png" class="zoomable zoomable-card" alt="Making a reminder journey map">
+                </div>
+                <div class="persona-column">
+                    <p>Appointment Booking</p>
+                    <img src="images/appt-journey.png" class="zoomable zoomable-card" alt="Booking an appointment journey map">
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- DESIGN -->
+        <section id="design" class="section fade-in">
+        <div class="phase-title">Design</div>
+
+        <div class="subsection">
+            <h3>Storyboard</h3>
+            <p class="storyboard-text">
+                This storyboard follows Paulette, a caregiver, who is responsible for scheduling a doctor’s appointment for her father. 
+                She needs a simple, intuitive way to select a suitable time, and confirm the appointment without confusion or extra steps. 
+            </p>
+            <img src="images/schedule-storyboard.png" class="zoomable storyboard-image" alt="Caregiver storyboard">
+            <p class="storyboard-text">
+                This second storyboard follows Clemence, a patient managing daily medication for a chronic condition. 
+                He needs to set up reminders for his medications, so he doesn’t forget doses. 
+            </p>
+            <img src="images/reminder-storyboard.png" class="zoomable storyboard-image" alt="Reminder storyboard">
+        </div>
+
+        <div class="subsection">
+            <h3>Sketches and Wireframes</h3>
+            <div class="personas-container">
+                <div class="persona-column">
+                    <p>Sketches</p>
+                    <img src="images/sketches.png" class="zoomable zoomable-card" alt="Sketches">
+                </div>
+                <div class="persona-column">
+                    <p>Wireframes</p>
+                    <img src="images/wireframes.png" class="zoomable zoomable-card" alt="Wireframes">
+                </div>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <h3>User Flow Chart</h3>
+            <div class="persona-column">
+                <img src="images/flowchart.png" class="zoomable zoomable-card" alt="User Flow Chart">
+            </div>
+        </div>
+
+        <div class="subsection">
+            <h3>Design Choices</h3>
+            <p>add design choices</p>
+        </div>
+
+        <div class="subsection">
+            <h3>Original Prototype</h3>
+            <p>The tool used to make the prototype is Figma. It can be viewed <a href="https://www.figma.com/proto/jPvn6Y47rEgN4767OT3TiY/Mini-Project?node-id=1-393&t=hgi9zPkuMW1tBf7B-1">here</a>.</p>
+            
+            <div class="prototype-grid">
+                <img src="images/originalprototype/addmedicine.png" class="zoomable" alt="Add medicine screen">
+                <img src="images/originalprototype/confirmation.png" class="zoomable" alt="Confirmation screen">
+                <img src="images/originalprototype/createreminder.png" class="zoomable" alt="Create reminder screen">
+                <img src="images/originalprototype/listmedicine.png" class="zoomable" alt="List medicine screen">
+                <img src="images/originalprototype/listreminder.png" class="zoomable" alt="List reminder screen">
+                <img src="images/originalprototype/messaging.png" class="zoomable" alt="Messaging screen">
+                <img src="images/originalprototype/pfp.png" class="zoomable" alt="Profile screen">
+                <img src="images/originalprototype/selectDate.png" class="zoomable" alt="Select date screen">
+            </div>
+
+            <h4 style="margin-top: 40px;">Screen Flows</h4>
+            
+            <div class="prototype-container">
+                <div>
+                    <p>Adding a medicine that is taken by the user into the list of medications</p>
+                    <img src="screenrecordings/original/add medecin.gif" class="zoomable zoomable-card prototype-gif" alt="Original prototype - add medicine flow">
+                </div>
+                <div>
+                    <p>Booking an appointment with a healthcare professional</p>
+                    <img src="screenrecordings/original/booking.gif" class="zoomable zoomable-card prototype-gif" alt="Original prototype - booking flow">
+                </div>
+                <div>
+                    <p>Creating a reminder, adding it to the list of reminders and checking it as complete</p>
+                    <img src="screenrecordings/original/creating reminder.gif" class="zoomable zoomable-card prototype-gif" alt="Original prototype - creating reminder flow">
+                </div>
+                <div>
+                    <p>Messaging a healthcare professional and viewing their profile information</p>
+                    <img src="screenrecordings/original/messaging+profile.gif" class="zoomable zoomable-card prototype-gif" alt="Original prototype - messaging and profile flow">
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- TESTING -->
+        <section id="testing" class="section fade-in">
+        <div class="phase-title">Testing</div>
+
+        <div class="subsection">
+            <h3>Usability Testing</h3>
+                <div class="research-text">
+                    <p>
+                        A usability test was conducted to evaluate the effectiveness and ease of use of the mobile application prototype designed to support medication management and appointment scheduling. 
+                        The primary goal of this testing was to assess how easily users could complete key tasks, while identifying potential usability issues such as confusion, navigation difficulties, and cognitive overload. 
+                        <br><br>
+                        The test involved 5 participants representing the target audience, including people who manage their own medications as well as caregivers responsible for others. 
+                        A moderated testing approach was used where participants interacted with a clickable prototype and were encouraged to think aloud while completing assigned tasks. 
+                        This method allowed for the observation of user behavior, decision-making processes, and emotional responses in real time. 
+                        <br><br>
+                        Participants were asked to complete three main tasks. 
+                        The first task required users to set up a medication reminder by entering details of their reminder, including a title, the time and the frequency of the reminder. 
+                        The second task involved booking a medical appointment, where users selected an appointment and booked it. 
+                        The last task was to add the information of one of their medications to receive a summary of the drug, which includes its purpose and side effects. 
+                        During these tasks, data was collected through direct observation, notes on user behaviour, and verbal feedback, metrics such as task completion rate, time on task, and number of errors were considered, alongside qualitative insights such as user frustration, hesitation, and confidence. 
+                        <br><br>
+                        Following the test, the collected data was analysed by grouping usability issues into common categories such as navigation challenges, unclear interface elements, and feature gaps. 
+                        Patterns across participants were identified to distinguish between major and minor issues. 
+                        Based on these findings, improvements were proposed. 
+                        This ensured that the design evolves in response to real user needs, ultimately enhancing usability and overall user experience.
+                    </p>
+                </div>
+        </div>
+
+        <div class="subsection">
+            <h3>User Feedback</h3>
+            <div class="research-text">
+                <p>
+                    The usability testing provided valuable insights into user expectations and areas for improvement within the application. 
+                    One key suggestion was the addition of notification preview feature, allowing users to see exactly how reminders would appear before confirming them. 
+                    This was perceived as a way to increase clarity and reduce uncertainty about whether reminders were set correctly. 
+                    Participants also expressed the need for better integration between appointments and the calendar view. 
+                    Specifically, they wanted already booked appointments to be clearly displayed within the calendar interface, enabling a more holistic and organized view of their schedule. 
+                    Another commonly identified improvement was the ability to separate completed and pending reminders. 
+                    Users indicated that distinguishing between these states would help them better track adherence and avoid confusion. 
+                    Additionally, one participant suggested adding a checkmark to indicate that the reminder is complete, rather than just change the color of the reminder. 
+                    Overall, the feedback highlighted the importance of clarity, organization, and contextual information in supporting users’ health management routines. 
+                    These insights helped guide the next design iteration. 
+                </p>
+            </div>
+            <p>Testing sessions, user feedback, and insights.</p>
+        </div>
+
+        <div class="subsection">
+            <h3>Prototype After Testing</h3>
+            <p>The tool used to make the prototype is Figma. It can be viewed <a href="https://www.figma.com/proto/jPvn6Y47rEgN4767OT3TiY/Mini-Project?node-id=135-830&p=f&t=BU3KM1hxzxovg1uo-1&scaling=min-zoom&content-scaling=fixed&page-id=135%3A396&starting-point-node-id=135%3A830&show-proto-sidebar=1">here</a>.</p>
+
+            <div class="prototype-container">
+                <div>
+                    <p>Adding a medicine that is taken by the user into the list of medications</p>
+                    <img src="screenrecordings/create medicine.gif" class="zoomable zoomable-card prototype-gif" alt="Original prototype - add medicine flow">
+                </div>
+                <div>
+                    <p>Booking an appointment with a healthcare professional</p>
+                    <video width="250" controls class="zoomable-card prototype-gif">
+                        <source src="screenrecordings/booking+view.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div>
+                    <p>Creating a reminder, adding it to the list of reminders and checking it as complete</p>
+                    <img src="screenrecordings/create reminder.gif" class="zoomable zoomable-card prototype-gif" alt="Original prototype - creating reminder flow">
+                </div>
+            </div>
+            <p><br><br>Note: Key improvements were implemented based on user feedback to enhance clarity, organization, and user control.</p>
+        </div>
+
+        <div class="subsection">
+            
+            <div class="feedback-layout">
+                <div class="feedback-image">
+                    <img src="images/prototype2.0/notifpreview.png" class="zoomable" alt="Notification preview flow">
+                </div>
+                <div class="feedback-text">
+                    <div class="feedback-item">
+                        <p><strong>Notification Preview:</strong> Users wanted to see exactly how reminders would appear before confirming. This reduces uncertainty and increases confidence in setting up reminders.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feedback-layout">
+                <div class="feedback-image">
+                    <img src="images/prototype2.0/reminderlist.png" class="zoomable" alt="Reminder list with completed tasks">
+                </div>
+                <div class="feedback-text">
+                    <div class="feedback-item">
+                        <p><strong>Progress Tracking:</strong> Users can easily see what they've completed throughout the day, reinforcing positive behavior and motivation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feedback-layout">
+                <div class="feedback-image">
+                    <img src="images/prototype2.0/calendaroptions.png" class="zoomable" alt="Calendar view options">
+                </div>
+                <div class="feedback-text">
+                    <div class="feedback-item">
+                        <p><strong>Clear Options:</strong> Giving users clear choice buttons when accessing calendar helps them understand what they can do without needing to navigate through multiple menus.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feedback-layout">
+                <div class="feedback-image">
+                    <img src="images/prototype2.0/confirm.png" class="zoomable" alt="Confirmation page">
+                </div>
+                <div class="feedback-text">
+                    <div class="feedback-item">
+                        <p><strong>Confirmation Page:</strong> A dedicated confirmation screen with clear next steps reassures users that their action was completed successfully.</p>
+                    </div>
+                    <div class="feedback-item">
+                        <p><strong>Task Bundling:</strong> Users mentioned how easy it would be to add reminders for appointments automatically from the booking page, reducing duplicate work.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>Note: Key improvements were implemented based on user feedback to enhance clarity, organization, and user control.</p>
+        </div>
+        </section>
+
+        <!-- REFLECTION -->
+        <section id="reflection" class="section fade-in">
+        <div class="phase-title">Reflection</div>
+
+        <div class="subsection">
+            <h3>Reflection</h3>
+            <p>The UX design process played a critical role in uncovering real user needs and shaping a solution that goes beyond basic functionality. 
+                Through research, personas, and usability testing, it became clear that users were not only struggling with remembering tasks, but also with managing complex routines and understanding their own health behaviors. 
+                One of the main challenges encountered during the design process was balancing simplicity with functionality. 
+                While users needed features such as medication tracking, reminders, and appointment scheduling, introducing too many options quickly made the interface feel overwhelming. This challenge was addressed by prioritizing clarity, reducing unnecessary steps, and focusing on intuitive design. Iterative testing also revealed gaps that were not initially considered, such as the need for notification previews and better organization of completed tasks. Overall, this process reinforced the importance of user-centered design and demonstrated how continuous feedback can significantly improve both usability and user satisfaction.</p>
+        </div>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>
