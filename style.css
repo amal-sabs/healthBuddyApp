@@ -323,3 +323,74 @@ nav a.active, nav a:hover { color:var(--accent); font-weight:700; }
         flex: 1 1 100%;
     }
 }
+
+/* Survey Results subsection */
+.survey-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.survey-container h3 {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.survey-text {
+    flex: 1 1 45%;
+    min-width: 300px;
+}
+
+.survey-text p {
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    max-width: 100%;
+}
+
+.survey-images {
+    flex: 1 1 45%;
+    min-width: 300px;
+}
+
+.survey-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.survey-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.survey-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.survey-item img:hover {
+    transform: scale(1.02);
+}
+
+/* Mobile stacking for survey */
+@media (max-width: 768px) {
+    .survey-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .survey-text {
+        flex: 1 1 100%;
+    }
+    .survey-images {
+        flex: 1 1 100%;
+    }
+    .survey-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
